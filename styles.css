@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #111;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@ body {
   border-radius: 50%;
   margin: -30px;
   border-top: 4px solid #24ecff;
-  animation : animate 3s linear infinite ;
+  animation: animate 3s linear infinite;
 }
 
 .container .ring::before {
@@ -40,24 +40,23 @@ body {
   height: 15px;
   background: #24ecff;
   border-radius: 50%;
-  box-shadow:
-   0 0 0 5px #24ecff33,
-   0 0 0 10px #24ecff22,
-    0 0 0 20px #24ecff11,
-    0 0 20px #24ecff,
-    0 0 50px #24ecff;
+  box-shadow: 0 0 0 5px #24ecff33, 0 0 0 10px #24ecff22, 0 0 0 20px #24ecff11,
+    0 0 20px #24ecff, 0 0 50px #24ecff;
 }
 
 .container .ring:nth-child(2) {
-  animation: animate2 4s linear infinite;  
+  animation: animate2 4s linear infinite;
+  border-top: 4px solid #8bff95;
+
   /* position: absolute;
   top: -66.66px; */
 }
 
 .container .ring:nth-child(3) {
-    position: absolute;
-    top: -66.66px;
-  }
+  position: absolute;
+  border-top: 4px solid #f14848;
+  top: -66.66px;
+}
 
 .container p {
   position: absolute;
@@ -75,73 +74,74 @@ body {
     top: 100px;
 } */
 
-
-
+.container .ring:nth-child(3):before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 15px;
+  height: 15px;
+  background: #e12f2f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #e12f2f33, 0 0 0 10px #e12f2f22, 0 0 0 20px #e12f2f11,
+    0 0 20px #e12f2f, 0 0 50px #e12f2f;
+}
 
 .container .ring:nth-child(2):before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 15px;
-    height: 15px;
-    background: #93ff2d;
-    border-radius: 50%;
-    box-shadow:
-     0 0 0 5px #93ff2d33,
-     0 0 0 10px #93ff2d22,
-      0 0 0 20px #93ff2d11,
-      0 0 20px #93ff2d,
-      0 0 50px #93ff2d;
-  }
-  
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 15px;
+  height: 15px;
+  background: #93ff2d;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #93ff2d33, 0 0 0 10px #93ff2d22, 0 0 0 20px #93ff2d11,
+    0 0 20px #93ff2d, 0 0 50px #93ff2d;
+}
 
 /* key frames */
 
 @keyframes animate {
-
-  0%{
-    /* background-color: rgba(5, 105, 152, 0.3); */
+  0% {
+    background-color: rgba(5, 105, 152, 0.3);
+    backdrop-filter: blur(100px);
     transform: rotate(0deg);
 
+    backdrop-filter: blur(14px);
   }
 
-  50%{
-    /* background-color: rgba(0, 53, 76, 0.3); */
+  50% {
+    backdrop-filter: blur(14px);
+    background-color: rgba(0, 53, 76, 0.3);
     /* transform: rotate(360deg); */
   }
 
-
-  100%{
+  100% {
     /* background: purple; */
-    /* background-color: rgba(2, 16, 22, 0.3); */
+    background-color: rgba(2, 16, 22, 0.3);
+    backdrop-filter: blur(14px);
+
     transform: rotate(360deg);
-
   }
-
-    
 }
 
 @keyframes animate2 {
+  0% {
+    background-color: rgba(4, 66, 95, 0.3);
+    backdrop-filter: blur(14px);
 
-    0%{
-      /* background-color: rgba(5, 105, 152, 0.3); */
-      transform: rotate(0deg);
-  
-    }
-  
-    50%{
-      /* background-color: rgba(0, 53, 76, 0.3); */
-      /* transform: rotate(360deg); */
-    }
-  
-  
-    100%{
-      /* background: purple; */
-      /* background-color: rgba(2, 16, 22, 0.3); */
-      transform: rotate(360deg);
-  
-    }
-  
-      
+    transform: rotate(0deg);
   }
+
+  50% {
+    background-color: rgba(0, 53, 76, 0.3);
+    /* transform: rotate(360deg); */
+  }
+
+  100% {
+    /* background: purple; */
+    background-color: rgba(2, 16, 22, 0.3);
+    transform: rotate(360deg);
+  }
+}
